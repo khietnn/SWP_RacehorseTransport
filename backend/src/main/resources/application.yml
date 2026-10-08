@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: racehorse-transport
+  profiles:
+    default: dev
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    open-in-view: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-minutes: 480
+  cors:
+    allowed-origins: http://localhost:5173
